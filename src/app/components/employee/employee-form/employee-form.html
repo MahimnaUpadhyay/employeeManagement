@@ -1,0 +1,53 @@
+<form
+  (ngSubmit)="onSubmit()"
+  class="grid grid-cols-1 md:grid-cols-3 gap-4 items-end">
+
+  <div>
+    <label class="block text-sm font-medium text-gray-600 mb-1">
+      Name
+    </label>
+    <input
+      [(ngModel)]="employee.name"
+      name="name"
+      placeholder="John Doe"
+      required
+      class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+    />
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium text-gray-600 mb-1">
+      Department
+    </label>
+    <input
+      [(ngModel)]="employee.dept"
+      name="dept"
+      placeholder="Engineering"
+      required
+      class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+    />
+  </div>
+
+  <div>
+    <label class="block text-sm font-medium text-gray-600 mb-1">
+      Email
+    </label>
+    <input
+      [(ngModel)]="employee.email"
+      name="email"
+      placeholder="john@example.com"
+      required
+      type="email"
+      class="w-full px-3 py-2 border rounded-lg focus:outline-none focus:ring-2 focus:ring-indigo-500"
+    />
+  </div>
+
+  <div class="md:col-span-3">
+    <button
+      type="submit"
+      class="bg-indigo-600 text-white px-6 py-2 rounded-lg hover:bg-indigo-700 transition">
+      Add Employee
+    </button>
+  </div>
+
+</form>

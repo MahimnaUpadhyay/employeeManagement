@@ -1,0 +1,35 @@
+<h2 class="text-xl font-semibold mb-4 text-gray-700">
+  Team List
+</h2>
+
+<div *ngIf="teamList.length; else empty" class="overflow-x-auto">
+  <table class="min-w-full border rounded-lg overflow-hidden">
+    <thead class="bg-gray-100">
+      <tr>
+        <th class="px-4 py-2 text-left text-sm font-medium text-gray-600">ID</th>
+        <th class="px-4 py-2 text-left text-sm font-medium text-gray-600">Team Leader</th>
+        <th class="px-4 py-2 text-left text-sm font-medium text-gray-600">Team Members</th>
+        <th class="px-4 py-2 text-left text-sm font-medium text-gray-600">Email</th>
+      </tr>
+    </thead>
+
+    <tbody>
+      <tr
+        *ngFor="let team of teamList"
+        class="border-t hover:bg-gray-50">
+        <td class="px-4 py-2 text-sm">{{ team.id }}</td>
+        <td class="px-4 py-2 text-sm font-medium">{{ team.teamLead }}</td>
+        <td class="px-4 py-2 text-sm">{{ team.teamMembers }}</td>
+        <td class="px-4 py-2 text-sm text-indigo-600">
+          {{ team.teamLeadEmail }}
+        </td>
+      </tr>
+    </tbody>
+  </table>
+</div>
+
+<ng-template #empty>
+  <p class="text-center text-gray-500 py-6">
+    No Team found.
+  </p>
+</ng-template>
